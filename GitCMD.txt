@@ -1,0 +1,5 @@
+git config --global user.name "Nikita Orlenko"
+
+git congig --global user.email "nikita.orlenko234@gmail.com"
+
+git config --global --list
