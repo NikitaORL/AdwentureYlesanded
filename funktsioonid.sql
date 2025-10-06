@@ -59,3 +59,7 @@ Insert into #PersonDetails Values(3, 'Todd')
 Select * from #PersonDetails
 End
 --35 fail ///////////////////////////////////////////////////////
+CREATE INDEX IX_DimEmployee_BaseRate
+ON DimEmployee(BaseRate ASC)
+EXEC sp_help DimEmployee;
+DROP INDEX DimEmployee.IX_DimEmployee_BaseRate
