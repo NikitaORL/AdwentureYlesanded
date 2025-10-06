@@ -34,7 +34,7 @@ DROP INDEX IX_tblEmployees_Gender_Salary ON tblEmployees;
 
 
 ----------------------------------------------------------------------------
---38
+--37
 CREATE TABLE [tblEmployee]
 (
   [id] int PRIMARY KEY,      
@@ -52,3 +52,17 @@ Insert into tblEmployee Values(1, 'Mike', 'Sandoz', 4500, 'Male', 'New York')
 Insert into tblEmployee Values(1, 'John', 'Menco', 2500, 'Male', 'London')
 
 SELECT * FROM tblEmployee;
+
+
+Drop index tblEmployee.PK_tblEmplo_3214EC07236943A5
+
+-----------------------------------------------------------------------------------
+--38////////////
+create  NonClustered Index IX_tblEmployee_salary
+on tblEmployee (Salary Asc)
+
+--kontroll
+EXEC sp_helpindex 'tblEmployee';
+
+
+
