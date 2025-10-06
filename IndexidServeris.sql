@@ -31,3 +31,7 @@ ON tblEmployees(Gender DESC, Salary ASC);
 -- Indeksite kustutamine
 DROP INDEX IX_tblEmployees_Name ON tblEmployees;
 DROP INDEX IX_tblEmployees_Gender_Salary ON tblEmployees;
+
+
+----------------------------------------------------------------------------
+--38
