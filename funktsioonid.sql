@@ -47,3 +47,14 @@ select * from fn_GetEmployeeNameByid(5)
 
 
 --34 fail //////////////////////////////////////////////////////////
+Create Procedure spCreateLocalTempTable
+as
+begin
+Create table #PersonDetails(Id int, Name nvarchar(20))
+
+Insert into #PersonDetails Values(1, 'Mike')
+Insert into #PersonDetails Values(2, 'John')
+Insert into #PersonDetails Values(3, 'Todd')
+
+Select * from #PersonDetails
+End
