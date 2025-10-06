@@ -2,4 +2,13 @@ git config --global user.name "Nikita Orlenko"
 
 git congig --global user.email "nikita.orlenko234@gmail.com"
 
+git init
+
 git config --global --list
+
+-----------
+muudatuste kinnitamine
+git status
+git add .
+git commit -a -m "tegevus mis on tehtud"
+gir push

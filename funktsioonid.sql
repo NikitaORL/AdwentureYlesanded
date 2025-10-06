@@ -9,3 +9,21 @@ Cast(BirthDate as Date) as DOB
 FROM dbo.DimEmployee);
 --käivita
 select * from fn_ILTVF_GetEmployees();
+
+
+
+-- 33 fail
+Create Function fn_GetEmployeeNameByid(@id int)
+
+Returns nvarchar(20)
+as
+Begin
+Return (Select Name from dbo.DimEmployee Where Id=@id)
+End
+
+
+
+
+
+
+
