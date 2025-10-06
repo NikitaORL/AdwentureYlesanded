@@ -44,3 +44,6 @@ End
 
 --Kontroll
 select * from fn_GetEmployeeNameByid(5)
+
+
+--34 fail /////////////////////////////////////////////////////////
