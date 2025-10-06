@@ -65,4 +65,11 @@ on tblEmployee (Salary Asc)
 EXEC sp_helpindex 'tblEmployee';
 
 
+select * from tblEmployee where Salary > 4000 and Salary < 8000
+
+Delete from tblEmployee where salary = 2500
+Update tblEmployee Set Salary = 9000 where Salary = 7500
+
+Select * from tblEmployee order by salary 
+Select * from tblEmployee order by Salary Desc
 
