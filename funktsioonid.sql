@@ -1,3 +1,4 @@
+u
 --funktsioonid
 select * from DimEmployee
 
@@ -12,7 +13,7 @@ select * from fn_ILTVF_GetEmployees();
 
 
 
--- 33 fail
+-- 33 fail//////////////////////////////////////////////////////////////////////////////////////////
 Create Function fn_GetEmployeeNameByid(@id int)
 
 Returns nvarchar(20)
@@ -31,3 +32,15 @@ Begin
 Return (Select Name from dbo.DimEmployee Where id=@id)
 End
 
+
+Alter Function fn_GetEmployeeNameByid(@id int)
+
+Returns nvarchar(20)
+With SchemaBinding
+as
+Begin
+Return (Select Name from dbo.DimEmployee Where id=@id)
+End
+
+--Kontroll
+select * from fn_GetEmployeeNameByid(5)
