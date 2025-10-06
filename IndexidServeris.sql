@@ -1,28 +1,33 @@
 USE AdventureWorksDW2019;
 
-SELECT * FROM DimEmployee
-
-CREATE INDEX IX_DimEmployee_BaseRate
-ON DimEmployee(BaseRate ASC)
-EXEC sp_help DimEmployee;
-DROP INDEX DimEmployee.IX_DimEmployee_BaseRate
-
---------36 fail
-create table [tblEmoloyees]
+-- Loome tabeli õige nimega
+CREATE TABLE [tblEmployees]
 (
-  [id] int primary key,
-  [Name] nvarchar(50),
-  [Salary] int,
-  [Gender] nvarchar(10),
-  [City] nvarchar(50)
-)
+  [id] int PRIMARY KEY,      -- Esmane võti (Primary Key)
+  [Name] nvarchar(50),      -- Töötaja nimi
+  [Salary] int,             -- Töötaja palk
+  [Gender] nvarchar(10),    -- Sugu
+  [City] nvarchar(50)       -- Linn
+);
 
-insert into tblEmoloyees Values(3, 'John', 4500, 'Male', 'New York')
-insert into tblEmoloyees Values(1, 'Sam',2500, 'Male', 'London')
-insert into tblEmoloyees Values(4, 'Sara',5500, 'Female', 'Tokyo')
-insert into tblEmoloyees Values(5, 'Todd',3100, 'Male', 'Toronto')
-insert into tblEmoloyees Values(2, 'Pam',6500, 'Female', 'Sydney')
+-- Lisame andmed tabelisse
+INSERT INTO tblEmployees VALUES(3, 'John', 4500, 'Male', 'New York');
+INSERT INTO tblEmployees VALUES(1, 'Sam', 2500, 'Male', 'London');
+INSERT INTO tblEmployees VALUES(4, 'Sara', 5500, 'Female', 'Tokyo');
+INSERT INTO tblEmployees VALUES(5, 'Todd', 3100, 'Male', 'Toronto');
+INSERT INTO tblEmployees VALUES(2, 'Pam', 6500, 'Female', 'Sydney');
 
-Select * from tblEmoloyees
+-- Valime kõik read tabelist
+SELECT * FROM tblEmployees;
 
+-- Loome klasterindeksi veeru Name põhjal
+CREATE CLUSTERED INDEX IX_tblEmployees_Name
+ON tblEmployees(Name);
 
+-- Loome mittek-lasterindeksi veergudele Gender (kahanedes) ja Salary (kasvavalt)
+CREATE NONCLUSTERED INDEX IX_tblEmployees_Gender_Salary
+ON tblEmployees(Gender DESC, Salary ASC);
+
+-- Indeksite kustutamine
+DROP INDEX IX_tblEmployees_Name ON tblEmployees;
+DROP INDEX IX_tblEmployees_Gender_Salary ON tblEmployees;
