@@ -22,8 +22,12 @@ Return (Select Name from dbo.DimEmployee Where Id=@id)
 End
 
 
+Alter Function fn_GetEmployeeNameByid(@id int)
 
-
-
-
+Returns nvarchar(20)
+With Encryption
+as
+Begin
+Return (Select Name from dbo.DimEmployee Where id=@id)
+End
 
