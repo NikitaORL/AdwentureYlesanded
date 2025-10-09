@@ -49,3 +49,37 @@ JOIN tblDepartment
 ON tblEmployee.DepartmentId = tblDepartment.DeptId;
 
 SELECT * from vWEmployeesByDepartment
+
+
+CREATE VIEW vWITDepartment_Employees AS
+SELECT 
+    Id, 
+    Name, 
+    Salary, 
+    Gender, 
+    DeptName
+FROM tblEmployee
+JOIN tblDepartment
+ON tblEmployee.DepartmentId = tblDepartment.DeptId
+WHERE tblDepartment.DeptName = 'IT';
+
+
+CREATE VIEW vWEmployeesNonConfidentialData AS
+SELECT 
+    Id, 
+    Name, 
+    Gender, 
+    DeptName
+FROM tblEmployee
+JOIN tblDepartment
+ON tblEmployee.DepartmentId = tblDepartment.DeptId;
+
+
+CREATE VIEW vWEmployeesCountByDepartment AS
+SELECT 
+    DeptName, 
+    COUNT(Id) AS TotalEmployees
+FROM tblEmployee
+JOIN tblDepartment
+ON tblEmployee.DepartmentId = tblDepartment.DeptId
+GROUP BY DeptName;
