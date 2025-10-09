@@ -35,3 +35,17 @@ SELECT
 FROM tblEmployee
 JOIN tblDepartment
 ON tblEmployee.DepartmentId = tblDepartment.DeptId;
+
+
+CREATE VIEW vWEmployeesByDepartment AS
+SELECT 
+    Id, 
+    Name, 
+    Salary, 
+    Gender, 
+    DeptName
+FROM tblEmployee
+JOIN tblDepartment
+ON tblEmployee.DepartmentId = tblDepartment.DeptId;
+
+SELECT * from vWEmployeesByDepartment
