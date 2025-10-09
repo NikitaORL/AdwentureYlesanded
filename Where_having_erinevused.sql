@@ -28,6 +28,7 @@ HAVING SUM (SaleAmount) > 1000
 
 
 SELECT Product, SUM (SaleAmount) AS TotalSales
-FROM Sales
+FROM Sales	
 GROUP BY Product
 HAVING Product in ('iPhone', 'Speakers')
+---Lõpp		
