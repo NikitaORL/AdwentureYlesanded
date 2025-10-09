@@ -24,3 +24,14 @@ Insert into tblEmployee values (3, 'Pam', 6000, 'Female', 1)
 Insert into tblEmployee values (4, 'Todd', 4800, 'Male', 4)
 Insert into tblEmployee values (5, 'Sara', 3200, 'Female', 1)
 Insert into tblEmployee values (6, 'Ben', 4800, 'Male', 3)
+
+
+SELECT 
+    Id, 
+    Name, 
+    Salary, 
+    Gender, 
+    DeptName
+FROM tblEmployee
+JOIN tblDepartment
+ON tblEmployee.DepartmentId = tblDepartment.DeptId;
