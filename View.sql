@@ -111,3 +111,36 @@ Select * from vwEmployeeDetailsByDepartment
 UPDATE tblEmployee
 SET DepartmentId = 1
 WHERE Name = 'John';
+--------------fail 87
+
+
+
+CREATE TABLE TableA
+(
+    Id int PRIMARY KEY, 
+    Name nvarchar(50), 
+    Gender nvarchar(10)
+);
+GO
+
+INSERT INTO TableA VALUES (1, 'Mark', 'Male');
+INSERT INTO TableA VALUES (2, 'Mary', 'Female');
+INSERT INTO TableA VALUES (3, 'Steve', 'Male');
+INSERT INTO TableA VALUES (4, 'John', 'Male');
+INSERT INTO TableA VALUES (5, 'Sara', 'Female');
+GO
+
+CREATE TABLE TableB
+(
+    Id int PRIMARY KEY,
+    Name nvarchar(50),
+    Gender nvarchar(10)
+);
+GO
+
+INSERT INTO TableB VALUES (4, 'John', 'Male');
+INSERT INTO TableB VALUES (5, 'Sara', 'Female');
+INSERT INTO TableB VALUES (6, 'Pam', 'Female');
+INSERT INTO TableB VALUES (7, 'Rebeka', 'Female');
+INSERT INTO TableB VALUES (8, 'Jordan', 'Male');
+GO
