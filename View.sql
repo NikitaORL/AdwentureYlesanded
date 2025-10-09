@@ -173,3 +173,16 @@ INSERT INTO tblEmployees VALUES ('George', 'Male', 65000);
 INSERT INTO tblEmployees VALUES ('Tina', 'Female', 67000);
 INSERT INTO tblEmployees VALUES ('Ben', 'Male', 80000);
 GO
+
+
+SELECT Id, Name, Gender, Salary
+FROM tblEmployees
+WHERE Salary >= 50000
+
+EXCEPT
+
+SELECT Id, Name, Gender, Salary
+FROM tblEmployees
+WHERE Salary >= 60000
+
+ORDER BY Name;
