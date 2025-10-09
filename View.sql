@@ -151,3 +151,25 @@ FROM TableA
 EXCEPT
 SELECT Id, Name, Gender
 FROM TableB;
+
+
+CREATE TABLE tblEmployees
+(
+    Id int IDENTITY PRIMARY KEY,
+    Name nvarchar(100),
+    Gender nvarchar(10),
+    Salary int
+);
+GO
+
+INSERT INTO tblEmployees VALUES ('Mark', 'Male', 52000);
+INSERT INTO tblEmployees VALUES ('Mary', 'Female', 55000);
+INSERT INTO tblEmployees VALUES ('Steve', 'Male', 45000);
+INSERT INTO tblEmployees VALUES ('John', 'Male', 40000);
+INSERT INTO tblEmployees VALUES ('Sara', 'Female', 48000);
+INSERT INTO tblEmployees VALUES ('Pam', 'Female', 60000);
+INSERT INTO tblEmployees VALUES ('Tom', 'Male', 58000);
+INSERT INTO tblEmployees VALUES ('George', 'Male', 65000);
+INSERT INTO tblEmployees VALUES ('Tina', 'Female', 67000);
+INSERT INTO tblEmployees VALUES ('Ben', 'Male', 80000);
+GO
