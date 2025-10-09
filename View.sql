@@ -144,3 +144,10 @@ INSERT INTO TableB VALUES (6, 'Pam', 'Female');
 INSERT INTO TableB VALUES (7, 'Rebeka', 'Female');
 INSERT INTO TableB VALUES (8, 'Jordan', 'Male');
 GO
+
+
+SELECT Id, Name, Gender
+FROM TableA
+EXCEPT
+SELECT Id, Name, Gender
+FROM TableB;
