@@ -88,3 +88,19 @@ GROUP BY DeptName;
 Create view vWEmployeesDataExceptSalary
 as
 Select Id, Name, Gender, DepartmentId from tblEmployee
+
+
+Update vWEmployeesDataExceptSalary
+Set Name = 'Mikey' Where Id = 2
+
+
+CREATE VIEW vwEmployeeDetailsByDepartment AS
+SELECT 
+    Id, 
+    Name, 
+    Salary, 
+    Gender, 
+    DeptName
+FROM tblEmployee
+JOIN tblDepartment
+ON tblEmployee.DepartmentId = tblDepartment.DeptId;
