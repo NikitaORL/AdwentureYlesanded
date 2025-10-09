@@ -34,3 +34,16 @@ BEGIN
 Rollback
 Print 'You cannot create, alter or drop a table'
 END
+
+
+
+CREATE TRIGGER trRenameTable
+ON DATABASE
+FOR RENAME
+AS
+BEGIN
+Print 'You just renamed something'
+END
+
+EXEC sp_rename 'TableA', 'TableA_Renamed';
+GO
