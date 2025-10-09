@@ -83,3 +83,8 @@ FROM tblEmployee
 JOIN tblDepartment
 ON tblEmployee.DepartmentId = tblDepartment.DeptId
 GROUP BY DeptName;
+--40 fail ---------------------------------------
+
+Create view vWEmployeesDataExceptSalary
+as
+Select Id, Name, Gender, DepartmentId from tblEmployee
