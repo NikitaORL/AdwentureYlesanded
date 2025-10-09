@@ -104,3 +104,10 @@ SELECT
 FROM tblEmployee
 JOIN tblDepartment
 ON tblEmployee.DepartmentId = tblDepartment.DeptId;
+
+
+Select * from vwEmployeeDetailsByDepartment
+
+UPDATE tblEmployee
+SET DepartmentId = 1
+WHERE Name = 'John';
