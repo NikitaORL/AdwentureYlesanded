@@ -70,3 +70,19 @@ Print 'You cannot create, alter or drop a table in any database on the server'
 END
 
 
+--Data
+DISABLE TRIGGER tr_DatabaseScopeTrigger ON DATABASE;
+GO
+ENABLE TRIGGER tr_DatabaseScopeTrigger ON DATABASE;
+GO
+DROP TRIGGER tr_DatabaseScopeTrigger ON DATABASE;
+GO
+
+
+--Server
+DISABLE TRIGGER tr_ServerScopeTrigger ON ALL SERVER;
+GO
+ENABLE TRIGGER tr_ServerScopeTrigger ON ALL SERVER;
+GO
+DROP TRIGGER tr_ServerScopeTrigger ON ALL SERVER;
+GO
